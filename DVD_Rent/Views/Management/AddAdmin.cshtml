@@ -312,7 +312,7 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a class="dropdown-item preview-item" href="../Login/index">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
@@ -340,7 +340,7 @@
                             <div class="card-body">
                                 <h4 class="card-title">Add New Admin</h4>
                                 <p class="card-description"> Input data new admin </p>
-                                @using (Html.BeginForm("AddAdminPost", "Management", FormMethod.Post))
+                                @using (Html.BeginForm("AddAdminPost", "Management", FormMethod.Post, FormMethod.Post, new { enctype = "multipart/form-data" }))
                                 {
                                     <div class="form-group">
                                         <label for="exampleInputFirstname">First Name</label>
@@ -365,7 +365,7 @@
                                     <div class="form-group">
                                         <label for="exampleTextarea1">Address</label>
                                         @*<textarea class="form-control" id="exampleTextarea1" rows="4" placeholder="Address"></textarea>*@
-                                        @Html.TextBoxFor(m => m.address, new { @class = "form-control", @rows = "4", @placeholder = "Address", id = "exampleTextarea1" })
+                                        @Html.TextAreaFor(m => m.address, new { @class = "form-control", @rows = "4", @placeholder = "Address", id = "exampleTextarea1" })
                                     </div>
                                     <div class="form-group">
                                         <label for="exampleSelectGender">Gender</label>
@@ -412,10 +412,7 @@
                                         <label>File upload</label>
                                         <input type="file" name="img[]" class="file-upload-default">
                                         <div class="input-group col-xs-12">
-                                            <input type="text" class="form-control file-upload-info" disabled="" placeholder="Upload Image">
-                                            <span class="input-group-append">
-                                                <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                                            </span>
+                                            <input type="file" accept="image/png, image/jpeg, image/jpg" class="form-control file-upload-info" placeholder="Upload Image" name="file_img">
                                         </div>
                                     </div>
                                     <button type="submit" class="btn btn-primary mr-2">Submit</button>

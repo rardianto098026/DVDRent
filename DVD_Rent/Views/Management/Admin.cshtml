@@ -312,7 +312,7 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a class="dropdown-item preview-item" href="../Login/index">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
@@ -510,7 +510,7 @@
                 url: '@Url.Action("ChangeStatusAdmin", "Management")',
                 data: { id:cust_id },
                 success: function (data) {
-                    alert("Akun " + firstname + " " + lastname + " berhasil di delete");
+                    alert("Akun " + firstname + " berhasil di delete");
                     location.reload();
                 },
                 failure: function (response) {

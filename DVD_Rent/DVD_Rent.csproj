@@ -292,6 +292,7 @@
     <Content Include="Views\Management\AddAdmin.cshtml" />
     <Content Include="Views\Management\Movie.cshtml" />
     <Content Include="Views\Management\AddModifyMovie.cshtml" />
+    <Content Include="Views\Management\AddModifyInventory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

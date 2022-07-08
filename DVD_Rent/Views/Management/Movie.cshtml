@@ -41,7 +41,7 @@
                             </div>
                             <div class="profile-name">
                                 <h5 class="mb-0 font-weight-normal">@Session["username"].ToString()</h5>
-                                <span>Admin</span>
+                                <span>Movie</span>
                             </div>
                         </div>
                         <a href="#" id="profile-dropdown" data-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -312,7 +312,7 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a class="dropdown-item preview-item" href="../Login/index">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
@@ -344,7 +344,7 @@
                                         Add class <code>.table-striped</code>
                                     </p>*@
                                 <div class="table-responsive">
-                                    <a style="width:20%; margin-bottom:25px; z-index:1" class="nav-link btn btn-primary create-new-button" id="createbuttonDropdown" href="AddAdmin">+ Add new admin</a>
+                                    <a style="width:20%; margin-bottom:25px; z-index:1" class="nav-link btn btn-primary create-new-button" id="createbuttonDropdown" href="AddModifyMovie">+ Add new movie</a>
                                     <table class="table table-striped">
                                         <thead>
                                             <tr>
@@ -380,7 +380,7 @@
                                                     <td> @item.AgeRating</td>
                                                     <td> @item.UpdatedDate</td>
                                                     <td>
-                                                        <button type="button" class="btn btn-outline-secondary btn-icon-text">
+                                                        <button onclick="editMovie(@item.id)" type="button" class="btn btn-outline-secondary btn-icon-text">
                                                             Edit <i class="mdi mdi-file-check btn-icon-append"></i>
                                                         </button>
                                                     </td>
@@ -502,23 +502,11 @@
     <!-- plugins:js -->
     <script src="../../assets/vendors/js/vendor.bundle.base.js"></script>
     <script>
-        function deleteAdmin(cust_id, firstname, lastname) {
+        function editMovie(mov_id) {
             debugger;
-            $.ajax({
-                dataType: 'json',
-                type: 'POST',
-                url: '@Url.Action("ChangeStatusAdmin", "Management")',
-                data: { id:cust_id },
-                success: function (data) {
-                    alert("Akun " + firstname + " " + lastname + " berhasil di delete");
-                    location.reload();
-                },
-                failure: function (response) {
-                    $('#result').html(response);
-                    console.log("failed");
-                }
-        });
+            window.location = 'AddModifyMovie?mov_id='+ mov_id;
         }
+
     </script>
     <!-- endinject -->
     <!-- Plugin js for this page -->

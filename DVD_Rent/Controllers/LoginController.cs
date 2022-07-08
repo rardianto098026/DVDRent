@@ -19,6 +19,8 @@ namespace DVD_Rent.Controllers
         // GET: Login
         public ActionResult Index()
         {
+            Session.Clear();
+            Session.Abandon();
             LoginModels model = new LoginModels();
             return View(model);
         }

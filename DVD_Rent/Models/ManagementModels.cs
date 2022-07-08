@@ -60,6 +60,7 @@ namespace DVD_Rent.Models
             public string address { get; set; }
             public string address2 { get; set; }
             public string gender { get; set; }
+            public string picture_URL { get; set; }
             public string password { get; set; }
             public string confirmpassword { get; set; }
             public string store { get; set; }
@@ -99,11 +100,34 @@ namespace DVD_Rent.Models
             public string ReleaseYear { get; set; }
             public string Duration { get; set; }
             public string[] Genre { get; set; }
+            public string[] TambahGenre { get; set; }
+            public string[] KurangGenre { get; set; }
             public string AgeRating { get; set; }
             public List<T> listDDLAgeRating { get; set; }
             public List<T> listGenre { get; set; }
             public string PictureURL { get; set; }
             public string TrailerURL { get; set; }
+        }
+
+
+        public class AddModifyInventory
+        {
+            public string Movie { get; set; }
+            public string MovieID { get; set; }
+            public string Store { get; set; }
+            public string StoreID { get; set; }
+            public string StatusMovie { get; set; }
+            public string StatusMovieID { get; set; }
+        }
+
+        public class AddModifyInventory<T>
+        {
+            public List<T> listDDLMovie { get; set; }
+            public List<T> listDDLStore { get; set; }
+            public int stock { get; set; }
+            public int onrent { get; set; }
+            public int available { get; set; }
+            public List<T> listDDLStatus { get; set; }
         }
     }
 }
